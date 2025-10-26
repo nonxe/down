@@ -10,7 +10,7 @@
     },
     "WEBHOOK_URL": {
       "description": "Public HTTPS URL for webhook",
-      "required": true
+      "required": false
     },
     "LANG_MEMORY": {
       "description": "Enable persistent language memory (true/false)",
