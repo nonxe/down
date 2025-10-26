@@ -1,5 +1,5 @@
 {
-  "name": "Universal Video & Audio Downloader Bot",
+  "name": "Universal Video and Audio Downloader Bot",
   "description": "Multilingual Telegram bot for video/audio download with fallback logic",
   "repository": "https://github.com/nonxe/down",
   "stack": "heroku-24",
