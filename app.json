@@ -1,0 +1,24 @@
+{
+  "name": "TelegramDownloaderBot",
+  "description": "Telegram bot with resolution picker, audio mode, fallback logic, and universal site support.",
+  "stack": "heroku-24",
+  "buildpacks": [
+    { "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git" },
+    { "url": "heroku/python" }
+  ],
+  "env": {
+    "TELEGRAM_TOKEN": {
+      "description": "Your Telegram bot token",
+      "required": true
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "standard-2x"
+    }
+  },
+  "scripts": {
+    "postdeploy": "echo Bot deployed. Set TELEGRAM_TOKEN to start."
+  }
+}
