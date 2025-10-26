@@ -1,17 +1,26 @@
 {
-  "name": "TelegramDownloaderBot",
-  "description": "Telegram bot with resolution picker, audio mode, fallback logic, and universal site support.",
+  "name": "Universal Video & Audio Downloader Bot",
+  "description": "A multilingual Telegram bot for video/audio download with fallback logic and button-first UX.",
+  "repository": "https://github.com/nonxe/down",
   "stack": "heroku-24",
-  "buildpacks": [
-    { "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git" },
-    { "url": "heroku/python" }
-  ],
   "env": {
-    "TELEGRAM_TOKEN": {
-      "description": "Your Telegram bot token",
+    "BOT_TOKEN": {
+      "description": "Your Telegram Bot Token from @BotFather",
       "required": true
+    },
+    "WEBHOOK_URL": {
+      "description": "Public HTTPS URL for webhook",
+      "required": true
+    },
+    "LANG_MEMORY": {
+      "description": "Enable persistent language memory (true/false)",
+      "value": "true"
     }
   },
+  "buildpacks": [
+    { "url": "heroku/python" },
+    { "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest" }
+  ],
   "formation": {
     "worker": {
       "quantity": 1,
@@ -19,6 +28,6 @@
     }
   },
   "scripts": {
-    "postdeploy": "echo Bot deployed. Set TELEGRAM_TOKEN to start."
+    "postdeploy": "echo ✅ Deployment done. Bot is running as worker dyno."
   }
 }
