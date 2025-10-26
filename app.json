@@ -1,15 +1,15 @@
 {
   "name": "Universal Video & Audio Downloader Bot",
-  "description": "A multilingual Telegram bot for video/audio download with fallback logic and button-first UX.",
+  "description": "Multilingual Telegram bot for video/audio download with fallback logic",
   "repository": "https://github.com/nonxe/down",
   "stack": "heroku-24",
   "env": {
     "BOT_TOKEN": {
-      "description": "Your Telegram Bot Token from @BotFather",
+      "description": "Telegram bot token from BotFather",
       "required": true
     },
     "WEBHOOK_URL": {
-      "description": "Public HTTPS URL for webhook",
+      "description": "Your Heroku app URL for webhook. Optional, can set later",
       "required": false
     },
     "LANG_MEMORY": {
@@ -28,6 +28,6 @@
     }
   },
   "scripts": {
-    "postdeploy": "echo ✅ Deployment done. Bot is running as worker dyno."
+    "postdeploy": "echo Deployment finished"
   }
 }
